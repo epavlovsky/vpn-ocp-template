@@ -4,20 +4,24 @@ error_msg() {
   echo -e "\e[1;31m$1\e[0m" >&2
 }
 
-if [ -z "$VPN_SUBNET" ]; then
+if [ $USE_CUSTOM_ROUTING = true ] && [ -z "$VPN_SUBNET" ]; then
+    echo -n 'VPN subnet not set. Using default: 10.0.0.0/8'
     export VPN_SUBNET=10.0.0.0/8
 fi
 
 if [ -z "$VPN_PROTOCOL" ]; then
-    export VPN_PROTOCOL=nc
+    echo -n 'VPN protocol not set. Using default: anyconnect'
+    export VPN_PROTOCOL=anyconnect
 fi
 
 if [ -z "$VPN_SESSION" ]; then
+    echo -n 'VPN session timeout not set. Using default: 24 hours'
     # Default session timeout is 24 hours
     export VPN_SESSION=86400
 fi
 
 if [ -z "$AUTH_TYPE" ]; then
+    echo -n 'Authentication type not set. Using default: PWD'
     export AUTH_TYPE="PWD"
 fi
 

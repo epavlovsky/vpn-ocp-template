@@ -13,7 +13,7 @@ cookie_auth() {
 
 pwd_auth() {
   echo 'Using password authentication.'
-  AUTH="--user=$USER_NAME --passwd-on-stdin"
+  AUTH="--user=$USER_NAME"
 }
 
 authenticate() {
@@ -32,7 +32,8 @@ connect() {
     authenticate
   fi
   
-  openconnect $AUTH
+  openconnect $AUTH \
+              -vvv \
               --script=$OCP_DIR/post-connect.sh \
               --protocol=$VPN_PROTOCOL \
               --reconnect-timeout $VPN_SESSION \

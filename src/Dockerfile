@@ -1,8 +1,10 @@
 # Using fixed version to guarantee versions/architecture compatibility in the future
-FROM alpine:3.19
+# Alpine 3.16 is chosen because it uses openssl 1.1.1w-r1, while later versions use 3.x
+#Openssl 3.x contains issue 
+FROM alpine:3.16
 
 # Main repository does not contain openconnect package
-RUN apk add --no-cache openconnect --repository http://dl-cdn.alpinelinux.org/alpine/v3.19/community
+RUN apk add --no-cache openconnect --repository http://dl-cdn.alpinelinux.org/alpine/v3.16/community
 
 RUN apk add --no-cache tinyproxy procps
 
