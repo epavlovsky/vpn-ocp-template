@@ -1,2 +1,5 @@
+# IntelliJ IDEA settings directory
+.idea
+
 # macOS system files
 .DS_Store
