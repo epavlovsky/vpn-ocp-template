@@ -3,6 +3,9 @@
 # Name of Docker image. Probably should carry some usage context
 IMAGE_NAME='my-vpn-proxy'
 
+# Name of Docker container. By default same as IMAGE_NAME
+CONTAINER_NAME=$IMAGE_NAME
+
 # Port that will be exposed on a host (that runs container)
 HOST_PORT=8888
 

@@ -11,4 +11,5 @@ fi
 docker run -it --rm --privileged \
     --env-file $SCRIPT_DIR/custom-env.sh \
     -p $HOST_PORT:8888 \
+    --name $CONTAINER_NAME \
     $IMAGE_NAME
