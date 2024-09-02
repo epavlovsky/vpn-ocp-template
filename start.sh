@@ -1,6 +1,6 @@
 #!/bin/sh
 SCRIPT_DIR=$(dirname "$0")
-source $SCRIPT_DIR/custom-env.sh
+. $SCRIPT_DIR/custom-env.sh
 
 # If docker image does not exist - building it
 if [ -z "$(docker image ls | grep $IMAGE_NAME)" ]; then

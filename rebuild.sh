@@ -1,7 +1,7 @@
 #!/bin/sh
 
 SCRIPT_DIR=$(dirname "$0")
-source $SCRIPT_DIR/custom-env.sh
+. $SCRIPT_DIR/custom-env.sh
 
 # If docker image with same name (probably previous version) exists - removing it
 if [ ! -z "$(docker image ls | grep $IMAGE_NAME)" ]; then

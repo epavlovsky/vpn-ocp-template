@@ -1,6 +1,6 @@
 #!/bin/sh
 
-source $OCP_DIR/env-init.sh
+. $OCP_DIR/env-init.sh
 
 /usr/bin/tinyproxy -c /etc/tinyproxy/tinyproxy.conf
 
