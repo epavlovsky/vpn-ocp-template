@@ -8,7 +8,7 @@ cookie_auth() {
   echo 'Using cookie authentication.'
   echo -n "Enter $AUTH_COOKIE_NAME cookie value: "
   read -s AUTH_COOKIE
-  AUTH="-C $AUTH_COOKIE_NAME=$AUTHCOOKIE"
+  AUTH="-C $AUTH_COOKIE_NAME=$AUTH_COOKIE"
 }
 
 pwd_auth() {
