@@ -4,11 +4,6 @@ error_msg() {
   echo -e "\e[1;31m$1\e[0m" >&2
 }
 
-if [ $USE_CUSTOM_ROUTING = true ] && [ -z "$VPN_SUBNET" ]; then
-    echo -n 'VPN subnet not set. Using default: 10.0.0.0/8'
-    export VPN_SUBNET=10.0.0.0/8
-fi
-
 if [ -z "$VPN_PROTOCOL" ]; then
     echo -n 'VPN protocol not set. Using default: anyconnect'
     export VPN_PROTOCOL=anyconnect
