@@ -8,6 +8,9 @@ RUN apk add --no-cache openconnect --repository http://dl-cdn.alpinelinux.org/al
 
 RUN apk add --no-cache tinyproxy procps
 
+# For debugging purposes
+RUN apk --no-cache add curl
+
 COPY tinyproxy.conf /etc/tinyproxy/tinyproxy.conf
 
 ENV OCP_DIR=/etc/openconnect-proxy
